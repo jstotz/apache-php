@@ -1,2 +1,2 @@
-FROM php:7.2-apache
-COPY . /var/www/html/
+FROM amazon/aws-cli
+RUN aws sts get-caller-identity

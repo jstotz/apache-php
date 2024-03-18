@@ -1,2 +1,2 @@
-FROM php:7.2-apache
+FROM jaystotz/test:latest
 COPY . /var/www/html/

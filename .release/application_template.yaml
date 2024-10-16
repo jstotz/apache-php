@@ -26,6 +26,12 @@ services:
         target_port: "80"
         port: "80"
         loadbalancer: false
+    readiness_probe:
+          http_get:
+            path: /
+            port: 80
+          initial_delay_seconds: 5
+          period_seconds: 1
 workflows:
   - name: setup
     parallelize:

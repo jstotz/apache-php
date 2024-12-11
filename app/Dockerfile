@@ -1,3 +1,3 @@
 FROM php:7.2-apache
 COPY . /var/www/html/
-RUN echo "Do the thing 9"
+RUN echo "Do the thing 10"

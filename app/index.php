@@ -1,3 +1,3 @@
-<?php 
-    echo '<h1>Hello World from <span style="color: blue">blue (per env)!</span>!</h1>'; 
-?> 
+<?php
+    echo '<h1>Hello World from <span style="color: ' . $_ENV["COLOR"] . '">' . $_ENV["COLOR"] . '!</span>!</h1>';
+?>

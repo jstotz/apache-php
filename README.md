@@ -1,4 +1,4 @@
-## Verified to work in Release (blue)
+## Verified to work in Release (asdfd)
 This project was derived from the apache-php project in [awesome-compose](https://github.com/docker/awesome-compose)
 
 To make this project work in Release, we had to add a COPY command to the Dockerfile in app/Dockerfile to copy index.php into the container. When run locally, docker-compose creates an overlay filesystem and uses files in the directory, but when run in a hosted environment we need to be explicit and ensure that this file is copied into the container.

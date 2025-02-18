@@ -3,8 +3,8 @@
 set -e # Exit on error
 
 # Environment variables
-IMAGE_REPO="my-repo"
-IMAGE_NAME="my-image"
+IMAGE_REPO="jaystotz"
+IMAGE_NAME="test-public"
 
 # Step 1: Make a trivial change to README.md
 CHANGE_MSG="Automated update: $(date)"

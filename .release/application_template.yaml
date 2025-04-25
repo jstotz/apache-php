@@ -2,6 +2,7 @@
 execution_type: server
 domain: release.gethandsup.com
 repo_name: jstotz/apache-php
+tracking_branch: gitops-test
 hostnames:
   - web: web-apache-php-${env_id}.${domain}
 environment_templates:
@@ -32,6 +33,23 @@ services:
             port: 80
           initial_delay_seconds: 5
           period_seconds: 1
+  - name: web2
+    image: jstotz/apache-php/web
+    build:
+      context: app
+    has_repo: true
+    volumes: []
+    ports:
+      - type: node_port
+        target_port: "80"
+        port: "80"
+        loadbalancer: false
+    readiness_probe:
+          http_get:
+            path: /
+            port: 80
+          initial_delay_seconds: 5
+          period_seconds: 1          
 workflows:
   - name: setup
     parallelize:

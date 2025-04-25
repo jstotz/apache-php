@@ -33,7 +33,7 @@ services:
             port: 80
           initial_delay_seconds: 5
           period_seconds: 1
-  - name: web2-bleep
+  - name: web2
     image: jstotz/apache-php/web
     build:
       context: app

@@ -1,6 +1,6 @@
 ## Verified to work in Release
 
-# Label Test
+# Label Test 2
 
 This project was derived from the apache-php project in [awesome-compose](https://github.com/docker/awesome-compose)
 

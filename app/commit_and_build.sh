@@ -4,15 +4,17 @@ set -e # Exit on error
 
 # Environment variables
 IMAGE_REPO="jaystotz"
-IMAGE_NAME="test-public"
+IMAGE_NAME="test"
 
-# Step 1: Make a trivial change to README.md
-CHANGE_MSG="Automated update: $(date)"
-printf "\n%s\n" "$CHANGE_MSG" >>README.md
+if [ -z "$SKIP_COMMIT" ]; then
+    # Step 1: Make a trivial change to README.md
+    CHANGE_MSG="Automated update: $(date)"
+    printf "\n%s\n" "$CHANGE_MSG" >>README.md
 
-git add README.md
-git commit -m "$CHANGE_MSG"
-git push origin "$(git branch --show-current)"
+    git add README.md
+    git commit -m "$CHANGE_MSG"
+    git push origin "$(git branch --show-current)"
+fi
 
 # Step 2: Get full Git commit SHA
 COMMIT_SHA=$(git rev-parse HEAD)
